@@ -1,0 +1,64 @@
+@import "~@/vendor/styles/_appwork/functions";
+
+@mixin vue-multiselect-validation-state($state, $color) {
+  .is-#{$state} .multiselect:not(.multiselect--active) .multiselect__tags,
+  .multiselect.is-#{$state}:not(.multiselect--active) .multiselect__tags {
+    border-color: $color;
+  }
+}
+
+@mixin vue-multiselect-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .multiselect__tag {
+    background: $background !important;
+    color: $color !important;
+  }
+}
+
+@mixin vue-multiselect-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .multiselect__spinner:before,
+  .multiselect__spinner:after {
+    border-top-color: $background !important;
+  }
+
+  .multiselect--active .multiselect__tags {
+    border-color: $background !important;
+  }
+
+  .multiselect__option--highlight,
+  .multiselect__option--selected.multiselect__option--highlight {
+    background: $background !important;
+    color: $color !important;
+  }
+
+  .multiselect-primary {
+    @include vue-multiselect-variant($background, $color);
+  }
+}
+
+@mixin material-vue-multiselect-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .multiselect__spinner:before,
+  .multiselect__spinner:after {
+    border-top-color: $background !important;
+  }
+
+  .multiselect--active .multiselect__tags {
+    border-color: $background !important;
+    box-shadow: 0 -1px 0 0 $background inset !important;
+  }
+
+  .multiselect__option--highlight,
+  .multiselect__option--selected.multiselect__option--highlight {
+    background: $background !important;
+    color: $color !important;
+  }
+
+  .multiselect-primary {
+    @include vue-multiselect-variant($background, $color);
+  }
+}

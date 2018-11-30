@@ -1,0 +1,113 @@
+.VueTables__child-row-toggler {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.VueTables__child-row-toggler--closed::before {
+  content: "+";
+}
+
+.VueTables__child-row-toggler--open::before {
+  content: "-";
+}
+
+.VueTables__sortable {
+  position: relative;
+}
+
+.VueTables__sort-icon {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+
+  [dir=rtl] & {
+    right: auto;
+    left: 6px;
+  }
+}
+
+.VuePagination nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.VuePagination .pagination,
+.VuePagination__count {
+  flex-basis: auto !important;
+  flex-wrap: wrap;
+  margin: 0 0 1rem 0;
+  width: auto !important;
+}
+
+.VueTables__search label,
+.VueTables__limit label {
+  display: inline-block !important;
+  margin-right: .5em;
+
+  [dir=rtl] & {
+    margin-right: 0;
+    margin-left: .5em;
+  }
+}
+
+[dir="rtl"] .pull-left {
+  float: right;
+}
+
+[dir="rtl"] .pull-right {
+  float: left;
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .VueTables__sort-icon {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+
+  .VuePagination__pagination-item > a {
+    padding: $pagination-padding-y-sm $pagination-padding-x-sm;
+    min-width: calc(#{"#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2}"});
+    text-align: center;
+    font-size: $font-size-sm;
+
+    @include border-radius($border-radius-sm);
+  }
+
+  .VuePagination__count {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .VueTables__sort-icon {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+
+  .VuePagination__pagination-item > a {
+    padding: $pagination-padding-y-sm $pagination-padding-x-sm;
+    min-width: calc(#{"#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2}"});
+    text-align: center;
+    font-size: $font-size-sm;
+
+    @include border-radius($border-radius-sm);
+  }
+
+  .VuePagination__count {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+}

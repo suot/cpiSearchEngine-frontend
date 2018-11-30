@@ -1,0 +1,132 @@
+.toasted-container {
+  .toasted {
+    min-height: 0 !important;
+    padding: 9px 20px !important;
+
+    .action {
+      padding: 0 !important;
+      margin: 0 0 0 7px !important;
+    }
+  }
+
+  &.top-left,
+  &.bottom-left {
+    align-items: flex-start;
+
+    [dir=rtl] & {
+      align-items: flex-end;
+    }
+  }
+
+  &.top-right,
+  &.bottom-right {
+    align-items: flex-end;
+
+    [dir=rtl] & {
+      align-items: flex-start;
+    }
+  }
+
+  &.top-center,
+  &.bottom-center {
+    align-items: center;
+  }
+}
+
+[dir=rtl] .toasted-container .toasted {
+  .material-icons {
+    margin-right: -.4rem;
+    margin-left: .5rem;
+
+    &.after {
+      margin-right: .5rem;
+      margin-left: -.4rem;
+    }
+  }
+
+  .action {
+    margin-right: 7px !important;
+    margin-left: 0 !important;
+
+    &.icon .material-icons {
+      margin-right: 4px;
+      margin-left: 0;
+    }
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .toasted-container {
+    z-index: $zindex-notification;
+  }
+
+  .toasted-container .toasted {
+    line-height: $line-height-base !important;
+    font-size: $font-size-base !important;
+  }
+
+  .toasted-container .toasted .action {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+  }
+
+  .toasted.primary,
+  .toasted.bubble,
+  .toasted.outline {
+    box-shadow: $floating-component-shadow;
+    font-size: $font-size-base;
+  }
+
+  .toasted.primary,
+  .toasted.bubble {
+    font-weight: normal;
+  }
+
+  .toasted.primary {
+    border-radius: $border-radius;
+  }
+
+  .toasted.outline {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .toasted-container {
+    z-index: $zindex-notification;
+  }
+
+  .toasted-container .toasted {
+    line-height: $line-height-base !important;
+    font-size: $font-size-base !important;
+  }
+
+  .toasted-container .toasted .action {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+  }
+
+  .toasted.primary,
+  .toasted.bubble,
+  .toasted.outline {
+    box-shadow: $floating-component-shadow;
+    font-size: $font-size-base;
+  }
+
+  .toasted.primary,
+  .toasted.bubble {
+    font-weight: normal;
+  }
+
+  .toasted.primary {
+    border-radius: $border-radius;
+  }
+
+  .toasted.outline {
+    font-weight: $font-weight-semibold;
+  }
+}

@@ -1,0 +1,88 @@
+@import "./demo";
+
+// Base
+//
+
+.dropdown-item,
+.page-link,
+.nav {
+  outline: 0;
+}
+
+// Page transition
+//
+
+.router-transitions {
+  opacity: 1;
+  transition: opacity .2s;
+
+  body.app-loading & {
+    opacity: .75;
+  }
+}
+
+// Tables
+//
+
+table.b-table > thead > tr > th.sorting,
+table.b-table > tfoot > tr > th.sorting {
+  padding-right: 2rem;
+}
+
+[dir=rtl] .b-table > thead > tr > th.sorting,
+[dir=rtl] .b-table > tfoot > tr > th.sorting {
+  padding-left: 2rem;
+
+  &:before {
+    right: auto;
+    left: .75em;
+  }
+
+  &:after {
+    right: auto;
+    left: .25em;
+  }
+}
+
+table.b-table > thead {
+  > tr > th:focus {
+    outline: 0;
+    text-decoration: underline;
+  }
+
+  > tr > th.sorting::before,
+  > tr > th.sorting::after {
+    bottom: auto !important;
+    padding-bottom: 0 !important;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.default-style[dir=rtl] .b-table {
+  @import "~@/vendor/styles/_appwork/include";
+
+  > thead > tr > th.sorting,
+  > tfoot > tr > th.sorting {
+    padding-right: $table-cell-padding;
+  }
+
+  &.card-table > thead > tr > th.sorting:first-child,
+  &.card-table > tfoot > tr > th.sorting:first-child {
+    padding-right: $card-spacer-x;
+  }
+}
+
+.material-style[dir=rtl] .b-table {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  > thead > tr > th.sorting,
+  > tfoot > tr > th.sorting {
+    padding-right: $table-cell-padding;
+  }
+
+  &.card-table > thead > tr > th.sorting:first-child,
+  &.card-table > tfoot > tr > th.sorting:first-child {
+    padding-right: $card-spacer-x;
+  }
+}

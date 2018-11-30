@@ -1,0 +1,25 @@
+@import "~@/vendor/styles/_appwork/functions";
+
+@mixin vue-input-tag-validation-state($state, $color) {
+  .is-#{$state} .vue-input-tag-wrapper,
+  .vue-input-tag-wrapper.is-#{$state} {
+    border-color: $color;
+  }
+}
+
+@mixin vue-input-tag-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .input-tag {
+    background: $background !important;
+    color: $color !important;
+  }
+}
+
+@mixin vue-input-tag-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .input-tag-primary {
+    @include vue-input-tag-variant($background, $color);
+  }
+}

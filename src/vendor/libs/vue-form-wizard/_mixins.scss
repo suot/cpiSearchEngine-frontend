@@ -1,0 +1,6 @@
+@mixin vue-form-wizard-theme($color) {
+  .vue-form-wizard .wizard-nav > li.active .wizard-icon-circle {
+    border-color: $color !important;
+    color: $color;
+  }
+}

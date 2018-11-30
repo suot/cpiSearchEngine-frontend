@@ -1,0 +1,10 @@
+@import "~@/vendor/styles/_appwork/functions";
+
+@mixin vue-notification-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .notification.vue-notification {
+    background: $background;
+    color: $color;
+  }
+}

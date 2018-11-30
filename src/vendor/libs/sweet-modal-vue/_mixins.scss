@@ -1,0 +1,5 @@
+@mixin sweet-modal-vue-theme($color) {
+  .sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab.active a {
+    color: $color !important;
+  }
+}

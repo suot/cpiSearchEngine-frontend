@@ -1,0 +1,184 @@
+@import 'mixins';
+
+.cv-header-day {
+  text-transform: uppercase;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.cv-event {
+  border-color: transparent !important;
+  border-radius: .25rem;
+  text-overflow: ellipsis;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.cv-event.hasUrl:hover {
+  text-decoration: underline;
+}
+
+html:not([dir=rtl]) {
+  .cv-event.toBeContinued {
+    border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cv-event.continued {
+    border-left-style: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .cv-event.continued::before,
+  .cv-event.toBeContinued::after {
+    content: " \21e2 ";
+  }
+}
+
+[dir=rtl] {
+  .cv-day-number {
+    right: auto;
+    left: 0;
+  }
+
+  .cv-day-number::before {
+    margin-right: 0;
+    margin-left: 0.5em;
+  }
+
+  .cv-event.toBeContinued {
+    border-left-style: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .cv-event.continued {
+    border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cv-event.continued::before,
+  .cv-event.toBeContinued::after {
+    content: " \21e0 ";
+  }
+
+  .cv-event.offset0 {
+    left: 0;
+    right: 0;
+  }
+
+  .cv-event.offset1 {
+    left: 0;
+    right: calc((100% / 7));
+  }
+
+  .cv-event.offset2 {
+    left: 0;
+    right: calc((200% / 7));
+  }
+
+  .cv-event.offset3 {
+    left: 0;
+    right: calc((300% / 7));
+  }
+
+  .cv-event.offset4 {
+    left: 0;
+    right: calc((400% / 7));
+  }
+
+  .cv-event.offset5 {
+    left: 0;
+    right: calc((500% / 7));
+  }
+
+  .cv-event.offset6 {
+    left: 0;
+    right: calc((600% / 7));
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .cv-header-days,
+  .cv-header-day,
+  .cv-weeks,
+  .cv-week,
+  .cv-day {
+    border-color: $table-border-color;
+  }
+
+  .cv-header-day {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    background: $table-accent-bg;
+    line-height: $line-height-sm;
+  }
+
+  .cv-day.past,
+  .cv-day.outsideOfMonth {
+    background-color: $gray-25;
+    color: $text-muted;
+  }
+
+  .cv-event {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  .cv-event .startTime,
+  .cv-event .endTime {
+    font-weight: $font-weight-semibold;
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @include vue-simple-calendar-event-variant($color, $value);
+    }
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .cv-header-days,
+  .cv-header-day,
+  .cv-weeks,
+  .cv-week,
+  .cv-day {
+    border-color: $table-border-color;
+  }
+
+  .cv-header-day {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    background: $table-accent-bg;
+    line-height: $line-height-sm;
+  }
+
+  .cv-day.past,
+  .cv-day.outsideOfMonth {
+    background-color: $gray-25;
+    color: $text-muted;
+  }
+
+  .cv-event {
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  .cv-event .startTime,
+  .cv-event .endTime {
+    font-weight: $font-weight-semibold;
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @include vue-simple-calendar-event-variant($color, $value);
+    }
+  }
+}

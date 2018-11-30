@@ -1,0 +1,51 @@
+.notifications {
+  margin: .375rem !important;
+}
+
+.notifications .vue-notification {
+  margin-right: 0;
+  margin-left: 0;
+  border-color: rgba(0, 0, 0, .15);
+  border-left-width: 4px;
+
+  [dir=rtl] & {
+    border-right-width: 4px;
+    border-right-style: solid;
+    border-left-width: 0;
+    text-align: right;
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .notifications {
+    z-index: $zindex-notification;
+  }
+
+  .vue-notification {
+    box-shadow: $floating-component-shadow;
+    font-size: $font-size-base;
+  }
+
+  .notification-title {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .notification {
+    z-index: $zindex-notification;
+  }
+
+  .vue-notification {
+    box-shadow: $floating-component-shadow;
+    font-size: $font-size-base;
+  }
+
+  .notification-title {
+    font-weight: $font-weight-bold;
+  }
+}

@@ -1,0 +1,57 @@
+// -------------------------------------------------------------------------------
+// Imports
+
+@import "~@/vendor/libs/nouislider/mixins";
+@import "~@/vendor/libs/vue-quill-editor/mixins";
+@import "~@/vendor/libs/vue-dropzone/mixins";
+@import "~@/vendor/libs/vue-awesome-swiper/mixins";
+@import "~@/vendor/libs/spinkit/mixins";
+@import "~@/vendor/libs/plyr/mixins";
+@import "~@/vendor/libs/vue-slider-component/mixins";
+@import "~@/vendor/libs/vue-multiselect/mixins";
+@import "~@/vendor/libs/vue-input-tag/mixins";
+@import "~@/vendor/libs/vuejs-datepicker/mixins";
+@import "~@/vendor/libs/vue-flatpickr-component/mixins";
+@import "~@/vendor/libs/sweet-modal-vue/mixins";
+@import "~@/vendor/libs/vue-notification/mixins";
+@import "~@/vendor/libs/vue-form-wizard/mixins";
+@import "~@/vendor/libs/vue-simple-calendar/mixins";
+
+// -------------------------------------------------------------------------------
+// Theme mixin
+
+@mixin appwork-libs-theme($background, $color: null) {
+  @include nouislider-theme($background);
+  @include quill-theme($background);
+  @include dropzone-theme($background);
+  @include swiper-theme($background);
+  @include spinkit-theme($background);
+  @include plyr-theme($background, $color);
+  @include vue-slider-theme($background, $color);
+  @include vue-multiselect-theme($background, $color);
+  @include vue-input-tag-theme($background, $color);
+  @include vuejs-datepicker-theme($background, $color);
+  @include vue-flatpickr-component-theme($background, $color);
+  @include sweet-modal-vue-theme($background);
+  @include vue-notification-theme($background, $color);
+  @include vue-form-wizard-theme($background);
+  @include vue-simple-calendar-theme($background);
+}
+
+@mixin appwork-libs-material-theme($background, $color: null) {
+  @include material-nouislider-theme($background);
+  @include quill-theme($background);
+  @include dropzone-theme($background);
+  @include swiper-theme($background);
+  @include spinkit-theme($background);
+  @include plyr-theme($background, $color);
+  @include material-vue-slider-theme($background, $color);
+  @include material-vue-multiselect-theme($background, $color);
+  @include vue-input-tag-theme($background, $color);
+  @include vuejs-datepicker-theme($background, $color);
+  @include vue-flatpickr-component-theme($background, $color);
+  @include sweet-modal-vue-theme($background);
+  @include vue-notification-theme($background, $color);
+  @include vue-form-wizard-theme($background);
+  @include vue-simple-calendar-theme($background);
+}

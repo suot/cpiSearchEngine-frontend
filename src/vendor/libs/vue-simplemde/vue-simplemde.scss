@@ -1,0 +1,169 @@
+.editor-toolbar a {
+  vertical-align: middle;
+}
+
+.markdown-editor .fa-header:before {
+  content: '\f1dc';
+}
+.markdown-editor .fa-picture-o:before {
+  font-weight: 400;
+  content: '\f03e';
+}
+
+[dir=rtl] {
+  .editor-statusbar {
+    text-align: left;
+
+    span {
+      margin-right: 1rem;
+      margin-left: 0;
+    }
+  }
+
+  .CodeMirror-scroll {
+    margin-right: 0;
+    margin-left: -30px;
+  }
+
+  .CodeMirror-sizer {
+    border-right-width: 0 !important;
+    border-left-width: 1rem !important;
+  }
+
+  .editor-preview-side {
+    right: auto;
+    left: 0;
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .editor-toolbar.fullscreen,
+  .CodeMirror-fullscreen {
+    z-index: $zindex-modal-top;
+  }
+
+  .markdown-editor {
+    border: 1px solid $border-color;
+    background: #fff;
+  }
+
+  .CodeMirror {
+    border-color: $border-color;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    color: $body-color;
+  }
+
+  .CodeMirror-lines {
+    font-family: $font-family-monospace;
+  }
+
+  .editor-toolbar {
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+
+    a {
+      color: $body-color !important;
+
+      &.active,
+      &:hover {
+        border-color: $border-color;
+        background: none;
+      }
+    }
+
+    i.separator {
+      border-left-color: $border-color;
+    }
+  }
+
+  .editor-preview,
+  .editor-preview-side {
+    background: #fff;
+  }
+
+  .editor-preview-side {
+    border-color: $border-color;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  &[dir=rtl] .editor-preview-side {
+    border-right: 1px solid $border-color;
+  }
+
+  .editor-statusbar {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .editor-toolbar.fullscreen,
+  .CodeMirror-fullscreen {
+    z-index: $zindex-modal-top;
+  }
+
+  .markdown-editor {
+    border: 1px solid $border-color;
+    background: #fff;
+  }
+
+  .CodeMirror {
+    border-color: $border-color;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0;
+    color: $body-color;
+  }
+
+  .CodeMirror-lines {
+    font-family: $font-family-monospace;
+  }
+
+  .editor-toolbar {
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+
+    a {
+      color: $body-color !important;
+
+      &.active,
+      &:hover {
+        border-color: $border-color;
+        background: none;
+      }
+    }
+
+    i.separator {
+      border-left-color: $border-color;
+    }
+  }
+
+  .editor-preview,
+  .editor-preview-side {
+    background: #fff;
+  }
+
+  .editor-preview-side {
+    border-color: $border-color;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  &[dir=rtl] .editor-preview-side {
+    border-right: 1px solid $border-color;
+  }
+
+  .editor-statusbar {
+    border-top: 1px solid $border-color;
+  }
+}

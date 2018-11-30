@@ -1,0 +1,221 @@
+@import '~@/vendor/styles/_custom-variables/libs';
+@import 'mixins';
+
+$vue-input-tag-line-height: 1.5rem !default;
+
+.default-style .vue-input-tag-wrapper,
+.material-style .vue-input-tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-appearance: unset;
+
+  .input-tag,
+  .new-tag {
+    height: $vue-input-tag-line-height;
+    line-height: $vue-input-tag-line-height;
+  }
+
+  .input-tag {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 $vue-input-tag-line-height 0 .5rem;
+    border: 0;
+    border-radius: .125rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+
+  .input-tag .remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $vue-input-tag-line-height;
+    height: $vue-input-tag-line-height;
+    color: inherit;
+    text-align: center;
+    line-height: $vue-input-tag-line-height;
+    opacity: .5;
+
+    &::before {
+      content: "×";
+      font-size: 1rem;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &.read-only .input-tag {
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
+  }
+
+  .new-tag {
+    flex-grow: 1;
+    min-width: 7.5rem;
+    width: auto;
+  }
+}
+
+[dir=rtl].default-style .vue-input-tag-wrapper .input-tag .remove,
+[dir=rtl].material-style .vue-input-tag-wrapper .input-tag .remove {
+  right: auto;
+  left: 0;
+}
+
+
+.material-style .vue-input-tag-wrapper {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+
+  .new-tag {
+    padding: 0 !important;
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  $vue-input-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $vue-input-tag-line-height) / 2)));
+
+  .vue-input-tag-wrapper {
+    padding: $vue-input-tag-spacer 0 0 $vue-input-tag-spacer;
+    min-height: $input-height;
+    border: 1px solid $input-border-color;
+    background: $input-bg;
+
+    @include transition($input-transition);
+    @include border-radius($border-radius);
+
+    &.read-only {
+      background-color: $input-disabled-bg;
+    }
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper {
+    padding-right: $vue-input-tag-spacer;
+    padding-left: 0;
+  }
+
+  .vue-input-tag-wrapper .input-tag,
+  .vue-input-tag-wrapper .new-tag {
+    margin: 0 $vue-input-tag-spacer $vue-input-tag-spacer 0;
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper .input-tag,
+  &[dir=rtl] .vue-input-tag-wrapper .new-tag {
+    margin-right: 0;
+    margin-left: $vue-input-tag-spacer;
+  }
+
+  .vue-input-tag-wrapper .input-tag {
+    background-color: $badge-default-bg;
+    color: $body-color;
+    font-size: $font-size-base;
+
+    .remove {
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper .input-tag {
+    padding-right: .5rem;
+    padding-left: $vue-input-tag-line-height;
+  }
+
+  .vue-input-tag-wrapper .new-tag {
+    color: $body-color;
+    font-size: $font-size-base;
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  @include vue-input-tag-validation-state("valid", $form-feedback-valid-color);
+  @include vue-input-tag-validation-state("invalid", $form-feedback-invalid-color);
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      .input-tag-#{$color} {
+        @include vue-input-tag-variant($value);
+      }
+    }
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  $vue-input-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $vue-input-tag-line-height) / 2)));
+
+  .vue-input-tag-wrapper {
+    padding: $vue-input-tag-spacer 0 0 $vue-input-tag-spacer;
+    min-height: $input-height;
+    border: 0;
+    border-bottom: 1px solid $input-border-color;
+    border-radius: 0;
+    background: $input-bg;
+
+    @include transition($input-transition);
+
+    &.read-only {
+      background-color: $input-disabled-bg;
+    }
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper {
+    padding-right: $vue-input-tag-spacer;
+    padding-left: 0;
+  }
+
+  .vue-input-tag-wrapper .input-tag,
+  .vue-input-tag-wrapper .new-tag {
+    margin: 0 $vue-input-tag-spacer $vue-input-tag-spacer 0;
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper .input-tag,
+  &[dir=rtl] .vue-input-tag-wrapper .new-tag {
+    margin-right: 0;
+    margin-left: $vue-input-tag-spacer;
+  }
+
+  .vue-input-tag-wrapper .input-tag {
+    background-color: $badge-default-bg;
+    color: $body-color;
+    font-size: $font-size-base;
+
+    .remove {
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &[dir=rtl] .vue-input-tag-wrapper .input-tag {
+    padding-right: .5rem;
+    padding-left: $vue-input-tag-line-height;
+  }
+
+  .vue-input-tag-wrapper .new-tag {
+    color: $body-color;
+    font-size: $font-size-base;
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  @include vue-input-tag-validation-state("valid", $form-feedback-valid-color);
+  @include vue-input-tag-validation-state("invalid", $form-feedback-invalid-color);
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      .input-tag-#{$color} {
+        @include vue-input-tag-variant($value);
+      }
+    }
+  }
+}

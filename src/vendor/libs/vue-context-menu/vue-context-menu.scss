@@ -1,0 +1,45 @@
+.ctx-menu-container {
+  border: 0 !important;
+}
+
+.ctx-menu > * {
+  outline: none !important;
+}
+
+[dir=rtl] .ctx-menu {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .ctx-menu {
+    z-index: $zindex-dropdown;
+    margin: $dropdown-spacer 0;
+    padding: $dropdown-padding-y 0;
+    min-width: $dropdown-min-width;
+    border: $dropdown-border-width solid $dropdown-border-color;
+    border-radius: $border-radius;
+    background-color: $dropdown-bg;
+    box-shadow: $dropdown-box-shadow;
+    font-size: $font-size-base;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .ctx-menu {
+    z-index: $zindex-dropdown;
+    margin: $dropdown-spacer 0;
+    padding: $dropdown-padding-y 0;
+    min-width: $dropdown-min-width;
+    border: $dropdown-border-width solid $dropdown-border-color;
+    border-radius: $border-radius;
+    background-color: $dropdown-bg;
+    box-shadow: $dropdown-box-shadow;
+    font-size: $font-size-base;
+  }
+}

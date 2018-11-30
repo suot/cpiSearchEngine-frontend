@@ -1,0 +1,22 @@
+[dir="rtl"] {
+  .tree {
+    text-align: right;
+  }
+
+  .tree-icon.tree-checkbox,
+  .tree-icon.tree-themeicon {
+    transform: scaleX(-1);
+  }
+
+  .tree-default.tree-rtl .tree-node {
+    margin-right: 30px;
+  }
+  .tree-default > .tree-container-ul > .tree-node {
+    margin-right: 0;
+  }
+}
+
+.tree-closed > .tree-children .tree-selected,
+.tree-closed:not(.tree-leaf) > .tree-children .tree-wholerow-clicked {
+  background: none !important;
+}

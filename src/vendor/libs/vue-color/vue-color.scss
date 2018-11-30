@@ -1,0 +1,333 @@
+@import '~@/vendor/styles/_custom-variables/libs';
+
+$vc-compact-color-item-size: 1rem !default;
+$vc-compact-color-item-spacer: .25rem !default;
+$vc-compact-items-per-row: 12 !default;
+$vc-swatches-per-row: 5 !default;
+$vc-swatches-spacer: .625rem !default;
+$vc-swatches-item-width: 2.5rem !default;
+
+// Material
+
+.vc-material {
+  width: 130px !important;
+  height: auto !important;
+
+  .vc-material-split {
+    display: flex;
+  }
+
+  .vc-material-third {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0;
+  }
+}
+
+// Sketch
+
+.vc-sketch {
+  .vc-sketch-controls,
+  .vc-sketch-field {
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+  .vc-sketch-field--single,
+  .vc-sketch-field--double {
+    display: flex;
+    flex-shrink: 1;
+
+    .vc-input__input {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .vc-sketch-field--double {
+    flex-grow: 2;
+  }
+
+  .vc-editable-input {
+    width: 100%;
+  }
+
+  .vc-sketch-sliders,
+  .vc-sketch-color-wrap {
+    flex-shrink: 1;
+  }
+
+  .vc-sketch-sliders {
+    flex-grow: 1;
+  }
+}
+
+// Swatches
+
+.vc-swatches .vc-swatches-color-it {
+  width: 100%;
+}
+
+// Slider
+
+.vc-slider {
+  .vc-slider-swatches {
+    display: flex;
+    flex: 0 1 100%;
+  }
+
+  .vc-slider-swatch {
+    flex: 1 1 20%;
+  }
+}
+
+// Photoshop
+
+.vc-photoshop {
+  .vc-hue-picker {
+    width: 15px;
+  }
+
+  .vc-ps-body {
+    display: flex;
+  }
+
+  .vc-ps-controls {
+    display: flex;
+  }
+}
+
+// Chrome
+
+.vc-chrome {
+  .vc-chrome-controls,
+  .vc-chrome-fields {
+    display: flex;
+  }
+
+  .vc-chrome-color-wrap,
+  .vc-chrome-toggle-btn {
+    flex: 0 0 auto;
+  }
+
+  .vc-chrome-sliders,
+  .vc-chrome-fields {
+    flex: 1 1 auto;
+  }
+
+  .vc-chrome-fields-wrap {
+    display: flex;
+  }
+
+  .vc-chrome-field {
+    flex: 1 1 auto;
+  }
+
+  .vc-chrome-field .vc-editable-input {
+    width: 100%;
+  }
+}
+
+// Compact
+
+.vc-compact {
+  padding-top: $vc-compact-color-item-spacer !important;
+  padding-left: $vc-compact-color-item-spacer !important;
+
+  .vc-compact-color-item {
+    margin-right: $vc-compact-color-item-spacer;
+    margin-bottom: $vc-compact-color-item-spacer;
+    width: $vc-compact-color-item-size;
+    height: $vc-compact-color-item-size;
+  }
+}
+
+[dir="rtl"] {
+  .vc-material .vc-input__label {
+    right: 0;
+    left: auto;
+  }
+
+  .vc-material-split {
+    margin-right: 0;
+    margin-left: -10px;
+  }
+
+  .vc-compact-color-item,
+  .vc-swatches-color-group {
+    float: right;
+  }
+
+  .vc-swatches-pick {
+    margin-right: 8px;
+    margin-left: 0;
+  }
+
+  .vc-slider-swatch:first-child .vc-slider-swatch-picker {
+    border-radius: 0 2px 2px 0;
+  }
+
+  .vc-slider-swatch:last-child .vc-slider-swatch-picker {
+    border-radius: 2px 0 0 2px;
+  }
+
+  .vc-sketch-color-wrap {
+    margin-right: 4px;
+    margin-left: 0;
+  }
+
+  .vc-sketch-field--single {
+    padding-right: 6px;
+    padding-left: 0;
+  }
+
+  .vc-chrome-toggle-btn {
+    text-align: left;
+  }
+
+  .vc-chrome-toggle-icon-highlight {
+    right: 12px;
+    left: auto;
+  }
+
+  .vc-chrome-toggle-icon {
+    margin-right: 0;
+    margin-left: -4px;
+  }
+
+  .vc-ps-hue-wrap,
+  .vc-ps-controls {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+
+  .vc-ps-actions {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+
+  .vc-ps-fields .vc-input__input {
+    margin-right: 40%;
+    margin-left: 10px;
+    padding-right: 3px;
+    padding-left: 0;
+  }
+
+  .vc-ps-fields .vc-input__label {
+    right: 0;
+    left: auto;
+  }
+
+  .vc-ps-fields .vc-input__desc {
+    right: auto;
+    left: 0;
+  }
+
+  .vc-ps-fields__hex .vc-input__input {
+    margin-right: 20%;
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .vc-material,
+  .vc-compact,
+  .vc-swatches,
+  .vc-sketch,
+  .vc-chrome {
+    border: $dropdown-border-width solid $dropdown-border-color;
+    background: $dropdown-bg;
+    background-clip: padding-box;
+    box-shadow: $floating-component-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  // Swatches
+
+  .vc-swatches {
+    width: calc(#{($vc-swatches-item-width * $vc-swatches-per-row) + ($vc-swatches-spacer * ($vc-swatches-per-row + 1))} + #{$dropdown-border-width * 2} + 1.125rem);
+  }
+
+  .vc-swatches-box {
+    padding: $vc-swatches-spacer 0 0 $vc-swatches-spacer;
+  }
+
+  .vc-swatches-color-group {
+    width: $vc-swatches-item-width;
+  }
+
+  .vc-swatches-color-group {
+    margin-right: $vc-swatches-spacer;
+    padding-bottom: $vc-swatches-spacer;
+  }
+
+  // Chrome
+
+  .vc-chrome-saturation-wrap {
+    @include border-top-radius(if($border-radius, $border-radius - .0625rem, 0));
+  }
+
+  .vc-chrome-body {
+    @include border-bottom-radius(if($border-radius, $border-radius - .0625rem, 0));
+  }
+
+  // Compact
+
+  .vc-compact {
+    width: calc(#{($vc-compact-color-item-size * $vc-compact-items-per-row) + ($vc-compact-color-item-spacer * ($vc-compact-items-per-row + 1))} + #{$dropdown-border-width * 2});
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .vc-material,
+  .vc-compact,
+  .vc-swatches,
+  .vc-sketch,
+  .vc-chrome {
+    border: $dropdown-border-width solid $dropdown-border-color;
+    background: $dropdown-bg;
+    background-clip: padding-box;
+    box-shadow: $floating-component-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  // Swatches
+
+  .vc-swatches {
+    width: calc(#{($vc-swatches-item-width * $vc-swatches-per-row) + ($vc-swatches-spacer * ($vc-swatches-per-row + 1))} + #{$dropdown-border-width * 2} + 1.125rem);
+  }
+
+  .vc-swatches-box {
+    padding: $vc-swatches-spacer 0 0 $vc-swatches-spacer;
+  }
+
+  .vc-swatches-color-group {
+    width: $vc-swatches-item-width;
+  }
+
+  .vc-swatches-color-group {
+    margin-right: $vc-swatches-spacer;
+    padding-bottom: $vc-swatches-spacer;
+  }
+
+  // Chrome
+
+  .vc-chrome-saturation-wrap {
+    @include border-top-radius(if($border-radius, $border-radius - .0625rem, 0));
+  }
+
+  .vc-chrome-body {
+    @include border-bottom-radius(if($border-radius, $border-radius - .0625rem, 0));
+  }
+
+  // Compact
+
+  .vc-compact {
+    width: calc(#{($vc-compact-color-item-size * $vc-compact-items-per-row) + ($vc-compact-color-item-spacer * ($vc-compact-items-per-row + 1))} + #{$dropdown-border-width * 2});
+  }
+}

@@ -1,0 +1,43 @@
+@import "~@/vendor/styles/_appwork/functions";
+
+@mixin vue-slider-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .vue-slider-process {
+    background: $background !important;
+  }
+  .vue-slider-tooltip {
+    border-color: $background !important;
+    background: $background !important;
+    color: $color !important;
+  }
+}
+
+@mixin material-vue-slider-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .vue-slider-process,
+  .vue-slider-dot {
+    background: $background !important;
+  }
+  .vue-slider-dot {
+    box-shadow: none !important;
+  }
+  .vue-slider-tooltip {
+    border-color: $background !important;
+    background: $background !important;
+    color: $color !important;
+  }
+}
+
+@mixin vue-slider-theme($background, $color: null) {
+  .vue-slider-primary {
+    @include vue-slider-variant($background, $color);
+  }
+}
+
+@mixin material-vue-slider-theme($background, $color: null) {
+  .vue-slider-primary {
+    @include material-vue-slider-variant($background, $color);
+  }
+}

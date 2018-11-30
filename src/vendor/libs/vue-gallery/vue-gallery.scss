@@ -1,0 +1,102 @@
+// overwrite defaults
+body .blueimp-gallery {
+  a.close,
+  a.prev,
+  a.next {
+    &,
+    &:hover,
+    &:focus {
+      color: #fff !important
+    }
+  }  
+
+  a.close {
+    text-indent: -1000px;
+    overflow: hidden;
+    width: 50px;
+
+    &:hover,
+    &:focus {
+      opacity: .5 !important;
+    }
+
+    &::after {
+      content: '×';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-indent: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .prev,
+  .next {
+    border-color: transparent;
+  }
+}
+
+.blueimp-gallery-carousel {
+  box-shadow: none;
+}
+
+[dir=rtl] {
+  .blueimp-gallery {
+    direction: rtl;
+  }
+
+  .blueimp-gallery > .slides > .slide {
+    float: right;
+  }
+
+  .blueimp-gallery > .prev,
+  .blueimp-gallery > .next {
+    right: 15px;
+    left: auto;
+  }
+
+  .blueimp-gallery > .next {
+    right: auto;
+    left: 15px;
+  }
+
+  .blueimp-gallery > .play-pause {
+    transform: scaleX(-1);
+  }
+
+  .blueimp-gallery > .close,
+  .blueimp-gallery > .title {
+    right: 15px;
+    left: auto;
+    margin-right: 0;
+    margin-left: 40px;
+  }
+
+  .blueimp-gallery > .close {
+    right: auto;
+    left: 15px;
+    margin: -15px;
+  }
+
+  .blueimp-gallery > .play-pause {
+    right: auto;
+    left: 15px;
+  }
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .blueimp-gallery:not(.blueimp-gallery-carousel) {
+    z-index: $zindex-modal-top;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .blueimp-gallery:not(.blueimp-gallery-carousel) {
+    z-index: $zindex-modal-top;
+  }
+}

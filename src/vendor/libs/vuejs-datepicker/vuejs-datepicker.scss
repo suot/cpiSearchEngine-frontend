@@ -1,0 +1,229 @@
+@import '~@/vendor/styles/_custom-variables/libs';
+
+$vuejs-datepicker-calendar-btn-width: 36px !default;
+$vuejs-datepicker-clear-btn-width: 36px !default;
+$vuejs-datepicker-nav-arrow-size: 8px !default;
+$vuejs-datepicker-width: 250px !default;
+$vuejs-datepicker-padding: 4px !default;
+$vuejs-datepicker-cell-size: floor(($vuejs-datepicker-width - ($vuejs-datepicker-padding * 2)) / 7) !default;
+
+.vdp-datepicker {
+  [dir=rtl] & {
+    text-align: right;
+  }
+
+  .cell,
+  header .up,
+  header .next,
+  header .prev {
+    transition-duration: .2s;
+    transition-property: color background;
+  }
+
+  header .up,
+  header span:not([class]) {
+    background: none !important;
+  }
+
+  header .up {
+    opacity: 1;
+
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+  }
+
+  .vdp-datepicker__clear-button i {
+    font-style: normal;
+  }
+
+  .vdp-datepicker__calendar {
+    padding: 0 $vuejs-datepicker-padding $vuejs-datepicker-padding $vuejs-datepicker-padding;
+    width: auto;
+    background-clip: padding-box;
+
+    .cell {
+      width: floor(($vuejs-datepicker-width - ($vuejs-datepicker-padding * 2)) / 7);
+      height: floor(($vuejs-datepicker-width - ($vuejs-datepicker-padding * 2)) / 7);
+      border: 0 !important;
+      line-height: floor(($vuejs-datepicker-width - ($vuejs-datepicker-padding * 2)) / 7);
+    }
+
+    .cell.day.blank {
+      background: none !important;
+    }
+
+    .cell.month,
+    .cell.year {
+      width: 50%;
+    }
+  }
+
+  .vdp-datepicker__calendar header {
+    display: flex;
+  }
+
+  .vdp-datepicker__calendar header .prev,
+  .vdp-datepicker__calendar header .next {
+    float: none;
+    background: none !important;
+    opacity: .5;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &::after,
+    &::after {
+      margin: 0;
+      width: $vuejs-datepicker-nav-arrow-size;
+      height: $vuejs-datepicker-nav-arrow-size;
+      border-top: 0;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+      border-left: 0;
+      background: transparent;
+    }
+  }
+
+  .vdp-datepicker__calendar header .next::after {
+    border-right: 1px solid;
+    border-left: 0;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+
+    [dir=rtl] & {
+      transform: translateX(-50%) translateY(-50%) rotate(135deg);
+    }
+  }
+
+  .vdp-datepicker__calendar header .prev::after {
+    border-right: 0;
+    border-left: 1px solid;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+
+    [dir=rtl] & {
+      transform: translateX(-50%) translateY(-50%) rotate(-135deg);
+    }
+  }
+}
+
+.vdp-datepicker__calendar .cell {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  .vdp-datepicker {
+    .form-control[readonly] {
+      background: $input-bg;
+    }
+
+    header .up,
+    header span:not([class]) {
+      font-size: $big-font-size;
+    }
+
+    .cell.day-header {
+      border-radius: 0 !important;
+      background: $gray-50 !important;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-sm;
+    }
+
+    header .up:not(.disabled):hover,
+    header .up:not(.disabled):focus,
+    .cell:not(.disabled):not(.highlighted):hover,
+    .cell:not(.disabled):not(.highlighted):focus {
+      background: $gray-100;
+    }
+
+    .cell:not(.highlighted) {
+      @include border-radius($border-radius);
+    }
+
+    .vdp-datepicker__calendar .disabled {
+      background: none !important;
+      color: $text-light !important;
+    }
+
+    .selected {
+      @include border-radius($border-radius !important);
+    }
+  }
+
+  .vdp-datepicker__calendar {
+    z-index: $zindex-dropdown;
+    margin-top: $dropdown-spacer;
+    max-width: calc(#{($vuejs-datepicker-cell-size * 7) + ($vuejs-datepicker-padding * 2)} + #{$dropdown-border-width * 2});
+    border: $dropdown-border-width solid $dropdown-border-color;
+    box-shadow: $floating-component-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  .vdp-datepicker__calendar header .next::after,
+  .vdp-datepicker__calendar header .prev::after {
+    border-color: $body-color;
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  .vdp-datepicker {
+    .form-control[readonly] {
+      background: $input-bg;
+    }
+
+    header .up,
+    header span:not([class]) {
+      font-size: $big-font-size;
+    }
+
+    .cell.day-header {
+      border-radius: 0 !important;
+      background: $gray-50 !important;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-sm;
+    }
+
+    header .up:not(.disabled):hover,
+    header .up:not(.disabled):focus,
+    .cell:not(.disabled):not(.highlighted):hover,
+    .cell:not(.disabled):not(.highlighted):focus {
+      background: $gray-100;
+    }
+
+    .cell {
+      border-radius: 10rem;
+    }
+    .cell.day {
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-sm;
+    }
+
+    .vdp-datepicker__calendar .disabled {
+      background: none !important;
+      color: $text-light !important;
+    }
+  }
+
+  .vdp-datepicker__calendar {
+    z-index: $zindex-dropdown;
+    margin-top: $dropdown-spacer;
+    max-width: calc(#{($vuejs-datepicker-cell-size * 7) + ($vuejs-datepicker-padding * 2)} + #{$dropdown-border-width * 2});
+    border: $dropdown-border-width solid $dropdown-border-color;
+    box-shadow: $floating-component-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  .vdp-datepicker__calendar header .next::after,
+  .vdp-datepicker__calendar header .prev::after {
+    border-color: $body-color;
+  }
+}

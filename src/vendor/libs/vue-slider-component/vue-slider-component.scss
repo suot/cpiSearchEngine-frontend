@@ -1,0 +1,107 @@
+@import 'mixins';
+
+.vue-slider-component .vue-slider-tooltip {
+  min-width: 0;
+  border-width: 0;
+  line-height: 1.2;
+}
+
+.default-style {
+  @import "~@/vendor/styles/_appwork/include";
+
+  $slider-default-bg: $gray-400;
+  $slider-line-color: $gray-200;
+
+  .vue-slider-component {
+    .vue-slider {
+      background-color: $slider-line-color;
+    }
+
+    .vue-slider-process {
+      background-color: $slider-default-bg;
+    }
+
+    .vue-slider-dot {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), $floating-component-shadow;
+    }
+
+    .vue-slider-tooltip {
+      padding: $tooltip-padding-y $tooltip-padding-x;
+      border-color: $tooltip-bg;
+      border-radius: $border-radius;
+      background-color: $tooltip-bg;
+      color: $tooltip-color;
+      font-size: $font-size-sm;
+    }
+
+    .vue-slider-piecewise-dot {
+      background-color: rgba-to-hex($slider-line-color);
+    }
+
+    &.vue-slider-horizontal .vue-slider-piecewise-label,
+    &.vue-slider-horizontal-reverse .vue-slider-piecewise-label,
+    &.vue-slider-vertical .vue-slider-piecewise-label,
+    &.vue-slider-vertical-reverse .vue-slider-piecewise-label {
+      color: $text-muted;
+      font-size: $font-size-sm;
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      .vue-slider-#{$color} {
+        @include vue-slider-variant($value);
+      }
+    }
+  }
+}
+
+.material-style {
+  @import "~@/vendor/styles/_appwork/include-material";
+
+  $slider-default-bg: $gray-400;
+  $slider-line-color: $gray-200;
+
+  .vue-slider-component {
+    .vue-slider {
+      background-color: $slider-line-color;
+    }
+
+    .vue-slider-process {
+      background-color: $slider-default-bg;
+    }
+
+    .vue-slider-dot {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), $floating-component-shadow;
+    }
+
+    .vue-slider-tooltip {
+      padding: $tooltip-padding-y $tooltip-padding-x;
+      border-color: $tooltip-bg;
+      border-radius: $border-radius;
+      background-color: $tooltip-bg;
+      color: $tooltip-color;
+      font-size: $font-size-sm;
+    }
+
+    .vue-slider-piecewise-dot {
+      background-color: rgba-to-hex($slider-line-color);
+    }
+
+    &.vue-slider-horizontal .vue-slider-piecewise-label,
+    &.vue-slider-horizontal-reverse .vue-slider-piecewise-label,
+    &.vue-slider-vertical .vue-slider-piecewise-label,
+    &.vue-slider-vertical-reverse .vue-slider-piecewise-label {
+      color: $text-muted;
+      font-size: $font-size-sm;
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      .vue-slider-#{$color} {
+        @include material-vue-slider-variant($value);
+      }
+    }
+  }
+}
