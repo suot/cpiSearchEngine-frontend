@@ -2,7 +2,7 @@
 
 ## Clone source code
 ```
-Git clone https://github.com/hongshuidang/alumniCarpool-Frontend.git
+Git clone https://github.com/hongshuidang/cpiSearchEngine_Frontend.git
 ```
 
 ## Project setup: install dependencies
