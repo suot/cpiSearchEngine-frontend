@@ -2,7 +2,7 @@
   <nav class="layout-footer footer" :class="getLayoutFooterBg()">
     <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
       <div class="pt-3">
-        <span class="footer-text font-weight-bolder">Alumni Carpool</span> ©
+        <span class="footer-text font-weight-bolder">CPI Search Engine</span> ©
       </div>
       <div>
         <a href="javascript:void(0)" class="footer-link pt-3"><span @click="showModal_avatar_team">About Us</span></a>
@@ -30,7 +30,7 @@ export default {
     },
 
     showModal_avatar_team(){
-      let url = this.baseUrl+"img/team.jpg";
+      let url = this.baseUrl+"img/cpiTeam.jpg";
       // let htmlText = '<div><font size="2">Suo Tian</font></div>';
       let altMsg = 'Team\'s photo';
       let tags = ["Suo Tian", "Ittsel Ali", "Pratik Sanghvi", "Yan Zhang", "Shouhong Zheng"];
