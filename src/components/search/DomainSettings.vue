@@ -53,8 +53,8 @@ export default {
 
   data: () => ({
       domain: "",
-      depth,
-      amount
+      depth: null,
+      amount: null
   }),
 
   methods: {

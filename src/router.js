@@ -23,6 +23,10 @@ export default new Router({
         {
           path: 'search',
           component: () => import('@/components/search/SearchResults')
+        },
+        {
+          path: 'searchWithSuggestions',
+          component: () => import('@/components/search/SearchWithDropdownSuggestions')
         }
       ]
     }

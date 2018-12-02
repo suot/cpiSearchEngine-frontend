@@ -1,12 +1,10 @@
 <template>
   <div>
-
     <div class="py-1 mb-2">
-      <b-input-group>
-        <b-input v-model="searchQuery" />
-        <b-btn slot="append" variant="primary" @click="search1()"><i class="ion ion-ios-search"></i>&nbsp; Search</b-btn>
-      </b-input-group>
+      <b-btn slot="append" variant="primary" @click="search1()"><i class="ion ion-ios-search"></i>&nbsp; Search</b-btn>
+      <v-select label="wordInput" :filterable="false" :options="options" @search="onSearch" v-model="searchQuery"></v-select>
     </div>
+
 
     <div v-if="amount > 0">
       <span>About {{amount}} results ({{timeCost}} nanoseconds)</span>
@@ -20,7 +18,7 @@
                       <span>&nbsp; <span class="text-muted">·</span> &nbsp;{{page.freq}} found</span>
                   </div>
 
-                  <div v-if="page.text" class="mt-2">{{page.text}}</div>
+                  <div v-if="page.text" class="mt-2">{{ page.text }}</div>
               </li>
           </b-list-group>
       </b-card>
@@ -58,6 +56,7 @@
 
 <script>
 import vSelect from 'vue-select'
+// import vSelect from 'vue-select'
 
 export default {
   name: 'search-results',
@@ -108,10 +107,23 @@ export default {
 
     searchRecommendedWord(suggestion) {
       console.log(suggestion);
-      this.searchQuery = suggestion;
-      this.search1();
     },
-    
+
+
+    onSearch(search, loading) {
+      if(search.length >= 3){
+        let url = 'http://localhost:2020/cpi/suggestion?word='+search;
+
+        this.$http.get(url).then(response => {
+          let result = response.data;
+          this.options = result;
+          console.log(result);
+        }, response => {
+          this.$showNotification('acNotification', 'error', 'suggestion', 'Error occurres when getting suggestion with the prefix ' + this.searchQuery + '!');
+        });
+      }
+    },
+
   }
 }
 </script>

@@ -27,6 +27,7 @@
       <sidenav-divider class="mb-1"/>
       <sidenav-header class="small font-weight-semibold">654-CPI Search Engine</sidenav-header>
       <sidenav-router-link icon="ion ion-md-search" to="/cpi/search" :exact="true">Search</sidenav-router-link>
+      <sidenav-router-link icon="ion ion-ios-aperture" to="/cpi/searchWithSuggestions" :exact="true">Dropdown suggestions</sidenav-router-link>
       <sidenav-router-link icon="ion ion-ios-globe" to="/cpi/domain_settings" :exact="true">Domain settings</sidenav-router-link>
 
     </div>
