@@ -7,8 +7,7 @@
       <div>
         <a href="javascript:void(0)" class="footer-link pt-3"><span @click="showModal_avatar_team">About Us</span></a>
         <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Help</a>
-        <a href="https://github.com/hongshuidang/alumniCarpool-Frontend" class="footer-link pt-3 ml-4">Contribute</a>
-        <!-- <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a> -->
+        <a href="https://github.com/hongshuidang/cpisearch" class="footer-link pt-3 ml-4">Contribute</a>
       </div>
     </div>
   </nav>
@@ -34,7 +33,7 @@ export default {
       let url = this.baseUrl+"img/team.jpg";
       // let htmlText = '<div><font size="2">Suo Tian</font></div>';
       let altMsg = 'Team\'s photo';
-      let tags = ["Suo Tian", "Yan Zhang", "Gegen Nuoer", "Zhenyu Niu"];
+      let tags = ["Suo Tian", "Ittsel Ali", "Pratik Sanghvi", "Yan Zhang", "Shouhong Zheng"];
       let badges = "";
       for(let i in tags){
         badges += '<button class="d-inline-block mr-2" style="border-color: transparent; background: #26B4FF; color: #fff;">' + tags[i] + '</button>';
