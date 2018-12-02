@@ -82,13 +82,8 @@ export default {
   }),
   methods: {
     search1 () {
-      let url = "";
-      if(this.currentPage){
-        url = "http://localhost:2020/cpi/ranktest?word="+this.searchQuery+"&stringPageOffset="+this.currentPage;
-      }else{
-        url = "http://localhost:2020/cpi/ranktest?word="+this.searchQuery+"&stringPageOffset=1";
-      }
-
+      this.currentPage = 1;
+      let url = "http://localhost:2020/cpi/ranktest?word="+this.searchQuery+"&stringPageOffset="+this.currentPage;
       console.log(url);
 
       this.$http.get(url).then(response => {
@@ -111,7 +106,7 @@ export default {
       this.searchQuery = suggestion;
       this.search1();
     },
-    
+
   }
 }
 </script>
