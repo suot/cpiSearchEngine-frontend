@@ -24,7 +24,7 @@
               </li>
           </b-list-group>
       </b-card>
-      <b-pagination :total-rows="amount" v-model="currentPage" :per-page="5"  @input="search1" class="mt-3" />
+      <b-pagination :total-rows="amount" v-model="currentPage" :per-page="5"  @input="search2" class="mt-3" />
     </div>
     <div v-else>
       <div v-if="suggestions && suggestions.length > 0">
@@ -100,6 +100,28 @@ export default {
         this.$showNotification('acNotification', 'error', 'Domain-settings', 'Error occurres when searching ' + this.searchQuery + '!');
       });
     },
+
+    search2 () {
+      let url = "http://localhost:2020/cpi/ranktest?word="+this.searchQuery+"&stringPageOffset="+this.currentPage;
+      console.log(url);
+
+      this.$http.get(url).then(response => {
+        let result = response.data
+
+        this.amount = result.n;
+        this.timeCost = result.time;
+        this.pages = result.pages;
+        this.suggestions = result.suggestions;
+
+        console.log(result);
+        this.$showNotification('acNotification', 'success', 'Search', 'Search result on ' + this.searchQuery + ' is returned back successfully!');
+      }, response => {
+        this.$showNotification('acNotification', 'error', 'Domain-settings', 'Error occurres when searching ' + this.searchQuery + '!');
+      });
+    },
+
+
+
 
     searchRecommendedWord(suggestion) {
       console.log(suggestion);
