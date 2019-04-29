@@ -6,8 +6,7 @@
       </div>
       <div>
         <a href="javascript:void(0)" class="footer-link pt-3"><span @click="showModal_avatar_team">About Us</span></a>
-        <a href="javascript:void(0)" class="footer-link pt-3 ml-4">Help</a>
-        <a href="https://github.com/hongshuidang/cpisearch" class="footer-link pt-3 ml-4">Contribute</a>
+        <a href="https://github.com/hongshuidang/cpiSearchEngine_frontend" class="footer-link pt-3 ml-4">Contribute</a>
       </div>
     </div>
   </nav>
@@ -30,7 +29,7 @@ export default {
     },
 
     showModal_avatar_team(){
-      let url = this.baseUrl+"img/cpiTeam.jpg";
+      let url = this.baseUrl+"img/cpiTeam2.jpg";
       // let htmlText = '<div><font size="2">Suo Tian</font></div>';
       let altMsg = 'Team\'s photo';
       let tags = ["Suo Tian", "Ittsel Ali", "Pratik Sanghvi", "Yan Zhang", "Shouhong Zheng"];

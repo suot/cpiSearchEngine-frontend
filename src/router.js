@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import MainPage from './views/MainPage.vue'
 
 Vue.use(Router)
@@ -11,22 +10,22 @@ export default new Router({
   routes:
   [
     {
-      path: '/cpi',
+      path: '/',
       name: 'cpi',
       component: MainPage,
       children:
       [
         {
           path: 'domain_settings',
-          component: () => import('@/components/search/DomainSettings')
+          component: () => import('./components/DomainSettings')
         },
         {
           path: 'search',
-          component: () => import('@/components/search/SearchResults')
+          component: () => import('./components/SearchResults')
         },
         {
           path: 'searchWithSuggestions',
-          component: () => import('@/components/search/SearchWithDropdownSuggestions')
+          component: () => import('./components/SearchWithDropdownSuggestions')
         }
       ]
     }

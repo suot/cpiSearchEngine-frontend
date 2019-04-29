@@ -4,12 +4,10 @@
       <app-layout-sidenav />
 
       <div class="layout-container">
-
         <div class="layout-content">
           <div class="router-transitions container-fluid flex-grow-1 container-p-y">
             <router-view />
           </div>
-
           <app-layout-footer />
         </div>
       </div>
@@ -26,7 +24,6 @@ export default {
   components: {
     'app-layout-sidenav': LayoutSidenav,
     'app-layout-footer': LayoutFooter
-  },
-
+  }
 }
 </script>

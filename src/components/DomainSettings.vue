@@ -30,15 +30,11 @@
           </div>
         </div>
       </b-card-body>
-      <!-- / Ticket settings -->
 
-      <!-- Footer -->
       <b-card-footer>
-        <b-btn variant="primary" @click="configureDomain()">Configure domain</b-btn>
-        &nbsp;
+        <b-btn variant="primary" @click="configureDomain()">Configure domain</b-btn>        &nbsp;
         <b-btn variant="default">Cancel</b-btn>
       </b-card-footer>
-      <!-- Footer -->
     </b-card>
   </div>
 </template>
@@ -48,7 +44,7 @@
 export default {
   name: 'configure-domain',
   metaInfo: {
-    title: 'Conifgure domain'
+    title: 'Configure domain'
   },
 
   data: () => ({
@@ -59,16 +55,12 @@ export default {
 
   methods: {
     configureDomain(){
-      //add driver to the created orders
-      let parameterString = "?domain="+this.domain+"&maximumAmount="+this.amount+"&maximumDepth="+this.depth;
-      let cpiBackendUrl = 'http://localhost:2020/cpi/startup';
-      let url = cpiBackendUrl + parameterString;
-
+      let url = this.$store.state.dataUrl + "/cpi/startup?domain="+this.domain+"&maximumAmount="+this.amount+"&maximumDepth="+this.depth;
       this.$http.get(url).then(response => {
-        let result = response.data;
+        //let result = response.data;
         this.$showNotification('acNotification', 'success', 'Domain-settings', 'Domain is configured successfully!');
-      }, response => {
-        this.$showNotification('acNotification', 'error', 'Domain-settings', 'Error occurres when configuring domain!');
+      }, error => {
+        this.$showNotification('acNotification', 'error', 'Domain-settings', 'Error occurs when configuring domain!');
       });
     },
   }
