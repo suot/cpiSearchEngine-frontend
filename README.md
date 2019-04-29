@@ -2,7 +2,10 @@
 This web application is a domain search engine providing features of web crawling, keyword searching, and word suggestions. 
 
 ## Demo
-![](demo_cpiSearchEngine.gif)
+Click on the thumbnail to play the demo on Youtube
+
+[![Click to play on Youtube](https://img.youtube.com/vi/jPoD_kT1rh4/0.jpg)](https://www.youtube.com/watch?v=jPoD_kT1rh4)
+
 
 ## Architecture
 The frontend server is developed by Vue, Router, and Vuex, the backend is built by Java Spring Boot Restful API, and it is deployed in AWS EC2.
