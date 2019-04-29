@@ -1,7 +1,7 @@
 ## Introduction
-This web application is a domain search engine consisting of web crawling, keyword searching, and word suggestions. 
+This web application is a domain search engine providing features of web crawling, keyword searching, and word suggestions. 
 ## Architecture
-Frontend server is developed by Vue, Router, and Vuex, backend is built by Java Spring Boot Restful API, and it is deployed in AWS EC2.
+The frontend server is developed by Vue, Router, and Vuex, the backend is built by Java Spring Boot Restful API, and it is deployed in AWS EC2.
 
 Web crawling feature is implemented by using JSoup, StringTokenizer, Regex, Recursion, TST, and InvertedIndex; Keyword searching, including the pagination and caching, is implemented via Heap select and separate chaining; Word suggestions are developed via Edit distance, heap select, and quick sort.
 
@@ -27,11 +27,11 @@ Step 2: Keyword searching. Click the “Search” tab on the sidebar and input a
 
 <img src="readmeImage/8.png">
 
-Click on the pagination to go to later pages
+use the pagination bar to navigate
 
 <img src="readmeImage/9.png">
 
-Go back to the first page, you will see the process time is shortened significantly by using caching.
+Go back to the first page, you will see that the process time is shortened significantly by under caching.
 
 <img src="readmeImage/10.png">
 
@@ -69,5 +69,8 @@ npm run serve
 ```
 
 Step 2: backend server
+```
+Git clone https://github.com/hongshuidang/cpiSearchEngine_backend.git
+```
 Run in intellij via the embedded tomcat in Spring boot project, or generate a war package and put it into provided tomcat server.
 
