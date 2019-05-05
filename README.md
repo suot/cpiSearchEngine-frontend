@@ -63,7 +63,7 @@ Change the dataUrl in the main.js file to deploy the application locally or on A
 
 Step 1: frontend server
 ```
-Git clone https://github.com/hongshuidang/cpiSearchEngine_frontend.git
+Git clone https://github.com/hongshuidang/cpiSearchEngine-frontend.git
 ```
 ```
 npm install
@@ -77,7 +77,7 @@ npm run serve
 
 Step 2: backend server
 ```
-Git clone https://github.com/hongshuidang/cpiSearchEngine_backend.git
+Git clone https://github.com/hongshuidang/cpiSearchEngine-backend.git
 ```
 Run in intellij via the embedded tomcat in Spring boot project, or generate a war package and put it into provided tomcat server.
 
