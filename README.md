@@ -17,7 +17,7 @@ Web crawling feature is implemented by using JSoup, StringTokenizer, Regex, Recu
 ## User manual
 Step 1: crawl urls recursively from an input domain. As the application is deployed on AWS EC2, input its public ip and the default port in browser. Assume you are the administrator. Click on the “Domain settings” tab on the sidebar, and input the three attributes to crawl the urls: Domain where you want your search conducted in, Depth from the main page also the entry point of the domain, and the Amount of the urls you want to retrieve to build up your search pool.
 
-<img src="readmeImage/2.png">
+<img src="readmeImage/2.png" width="60%" height="60%">
 
 Backend output
 
@@ -45,12 +45,12 @@ Go back to the first page, you will see that the process time is shortened signi
 Step 3：Search a keyword that does not exist, you will get suggestions when there are some words whose edit distance from the input is 1 or 2. Clicking on any suggested keyword in a blue tag shows the search result of it directly.
 
 <img src="readmeImage/11.png">
-<img src="readmeImage/12.png">
+<img src="readmeImage/12.png" width="60%" height="60%">
 <img src="readmeImage/13.png">
 
 Step 4: Click on “Dropdown suggestions” and input a keyword, you will see a prefix-based suggestion list in the order to the descending order of their frequency. The dropdown list appears when the length of the input string is larger than 3, shows 5 labels maximumly, and is subject to change according to the input.
 
-<img src="readmeImage/14.png">
+<img src="readmeImage/14.png" width="60%" height="60%">
 
 Backend log
 
