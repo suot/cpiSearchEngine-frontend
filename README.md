@@ -72,6 +72,9 @@ npm install
 npm install node-sass
 ```
 ```
+npm build
+```
+```
 npm run serve
 ```
 
